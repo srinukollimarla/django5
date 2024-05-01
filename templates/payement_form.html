@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Form</title>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <h1>Payment Form</h1>
+    <form id="payment-form">
+        <div>
+            <label for="amount">Amount (in USD):</label>
+            <input type="text" id="amount" name="amount" placeholder="Enter the payment amount">
+        </div>
+        <div>
+            <label for="card-element">Credit Card Information:</label>
+            <div id="card-element"></div>
+        </div>
+        <div>
+            <label for="phonepe-element">PhonePe UPI ID:</label>
+            <input type="text" id="phonepe-element" name="phonepe" placeholder="Enter your PhonePe UPI ID">
+        </div>
+        <button id="submit-payment">Submit Payment</button>
+    </form>
+    <p id="payment-status"></p>
+
+    <script src="{% static 'payment.js' %}"></script>
+</body>
+</html>

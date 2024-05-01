@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Home</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+             font-family: Arial, Helvetica, sans-serif;
+            background-image: url('https://img.freepik.com/free-photo/natural-wonders-paradise-illustration_456031-93.jpg?w=1380&t=st=1697179566~exp=1697180166~hmac=d807f6cb83edb4ceb10f77040fad50888e3f79bb535aa8c3e656f6c8452aa63f'); /* Replace with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .header {
+            background-color: rgba(119, 162, 230, 0.8);
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Section styles */
+        .featured-artworks, .popular-artists {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Footer styles */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Artist Home</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="{%url 'add_artwork'%}">Add Artworks</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="{%url 'home'%}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="featured-artworks">
+        <h2>Featured Artworks</h2>
+        <!-- Add featured artwork images and descriptions here -->
+    </section>
+
+    <section class="popular-artists">
+        <h2>Popular Artists</h2>
+        <!-- Add popular artist profiles and artworks here -->
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Artist Home</p>
+    </footer>
+</body>
+</html>

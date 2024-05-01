@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+             background-image: url('https://img.freepik.com/free-photo/natural-wonders-paradise-illustration_456031-93.jpg?w=1380&t=st=1697179566~exp=1697180166~hmac=d807f6cb83edb4ceb10f77040fad50888e3f79bb535aa8c3e656f6c8452aa63f'); /* Replace with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-container label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .login-container input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .login-container button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .create-account {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .create-account a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="{% url 'checkadminlogin'%}" method="POST">
+            {%csrf_token%}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="create-account">
+            <p>Don't have an account? <a href="{% url 'artistregister' %}">Create one</a ></p>
+
+            <p>Are you an artist? <a href="{% url 'artistlogin' %}">login here</a ></p>
+        </div>
+    </div>
+</body>
+</html>

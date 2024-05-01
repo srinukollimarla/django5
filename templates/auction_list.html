@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Auction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Other CSS styles (header, item, etc.) remain the same as before */
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+        .bid-history {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .bid-history p {
+            margin: 5px 0;
+        }
+        .auction-image {
+            width: 300px; /* Set the width you prefer */
+            height: 150px; /* Set the height you prefer */
+            border: 2px solid #333;
+
+        .center-align {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bid-container {
+            text-align: center;
+            margin-top: 10px;
+    </style>
+</head>
+<body>
+<header>
+        <h1>Online Auction</h1>
+        <nav>
+            <ul>
+
+            </ul>
+        </nav>
+    </header>
+    <!-- Header and auction items remain the same as before -->
+
+    <div class="auction-items">
+        {% for item in items %}
+            <div class="auction-item">
+                <img src="{{ item.image.url }}" alt="{{ item.title }}" class="auction-image">
+                <h2 class="auction-title">{{ item.title }}</h2>
+                <p class="auction-description">{{ item.description }}</p>
+                <p class="auction-price" id="current-bid">Current Bid: $100.00</p>
+        <input type="number" id="new-bid" placeholder="Enter Your Bid" />
+        <button onclick="placeBid()">Place Bid</button>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="bid-history">
+        <h3>Bid History</h3>
+        <p>Initial Bid: $100.00</p>
+    </div>
+
+    <!-- Footer remains the same as before -->
+
+    <script>
+        let currentBid = 100.0;
+        const bidHistory = document.querySelector(".bid-history");
+
+        function placeBid() {
+            const newBid = parseFloat(document.getElementById("new-bid").value);
+            if (!isNaN(newBid) && newBid > currentBid) {
+                currentBid = newBid;
+                document.getElementById("current-bid").textContent = `Current Bid: $${currentBid.toFixed(2)}`;
+                addBidToHistory(newBid);
+            } else {
+                alert("Invalid bid. Please enter a higher amount.");
+            }
+        }
+
+        function addBidToHistory(newBid) {
+            const bidItem = document.createElement("p");
+            bidItem.textContent = `Bid: $${newBid.toFixed(2)}`;
+            bidHistory.appendChild(bidItem);
+        }
+    </script>
+</body>
+</html>

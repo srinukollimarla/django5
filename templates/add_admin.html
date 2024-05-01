@@ -1,0 +1,14 @@
+<!-- add_admin.html -->
+
+<form method="post" action="{% url 'add_admin' %}">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <!-- Add more fields as needed -->
+
+    <input type="submit" value="Add Admin">
+</form>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Art Gallery</title>
+    <link rel="stylesheet" href="artworkpage.css">
+</head>
+<style>body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+            background-color: #96B9FD;
+            color: #fff;
+            padding: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.art-item {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    /* display: flex; */
+    flex-direction: row-reverse;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+.art-item img {
+    max-width: 100%;
+    height: 250px;
+}
+
+.art-item h3 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.art-item p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.art-item span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+</style>
+<body>
+<header>
+        <h1>Artwork Listings</h1>
+        <nav>
+            <ul>
+                <li><a href="{%url 'home'%}">Home</a></li>
+                <li><a href="#">Artists</a></li>
+                <li><a href="{%url 'auction_list'%}">Auction</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="gallery">
+    {% for artwork in artworks %}
+    <div class="art-item">
+        <img src="{{ artwork.image.url }}" alt="{{ artwork.title }}">
+        <h3>{{ artwork.title }}</h3>
+        <p>Description: {{ artwork.description }}</p>
+        <span>Price: ₹{{ artwork.price }}</span>
+        <p>Artist: {{ artwork.artist }}</p>
+
+<button type="add to cart">add to cart</button>
+    </div>
+    {% endfor %}
+
+        <!-- Add more art items as needed -->
+    </div>
+</body>
+</html>

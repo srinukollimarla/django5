@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        /* Reset some default styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header styles */
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            background-color: #222;
+            color: #fff;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        /* Content styles */
+        .content {
+            margin-left: 270px; /* Adjust for sidebar width */
+            padding: 20px;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Admin Dashboard</h1>
+    </div>
+
+    <div class="sidebar">
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Users</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h2>Welcome to the Admin Dashboard</h2>
+        <p>This is the main content area of the admin dashboard.</p>
+    </div>
+
+    <div class="footer">
+        &copy; 2023 Admin Dashboard
+    </div>
+</body>
+</html>
